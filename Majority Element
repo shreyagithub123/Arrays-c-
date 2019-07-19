@@ -1,0 +1,43 @@
+Majority Element
+Given an array A of N elements. Find the majority element in the array. A majority element in an array A of size N is an element that appears more than N/2 times in the array
+Example:
+Input:
+2
+5
+3 1 3 3 2
+3
+1 2 3
+
+Output:
+3
+-1
+
+//code goes here.
+
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int t;
+	cin>>t;//test cases 
+	while(t--)
+	{
+	    int n;
+	    cin>>n;
+	    int a[n];//array of elements
+	    int key=-1;
+	  int b[100000]={};//array to count the element's occurence
+	  for(int i=0;i<n;i++)
+	  {
+	      cin>>a[i];
+	      b[a[i]]++;//if present increase
+	      if(b[a[i]]>n/2)
+	      key=a[i];//return 
+	  }
+	  cout<<key<<endl;
+	}
+	return 0;
+}
